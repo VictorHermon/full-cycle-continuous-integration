@@ -1,0 +1,17 @@
+{
+  "name": "Go Dev Container",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "remoteUser": "vscode",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "golang.go",
+        "ms-azuretools.vscode-docker",
+        "eamodio.gitlens"
+      ]
+    }
+  },
+  "postCreateCommand": "go install golang.org/x/tools/gopls@latest"
+}
