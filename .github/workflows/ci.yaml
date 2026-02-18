@@ -1,7 +1,8 @@
 name: ci-golang
 on:
-  push:
-    branches: [main]
+  pull_request:
+    branches:
+      - develop
 jobs:
   check-app:
     runs-on: ubuntu-latest
