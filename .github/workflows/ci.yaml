@@ -4,7 +4,7 @@ on:
     branches:
       - develop
 jobs:
-  test:
+  check-app:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -19,13 +19,3 @@ jobs:
         run: go run math.go
       - name: Test
         run: go test -v
-
-  check-app:
-    if: always()
-    needs: test
-    runs-on: ubuntu-latest
-    steps:
-      - run: |
-          if [ "${{ needs.test.result }}" = "failure" ]; then
-            exit 1
-          fi
